@@ -19,7 +19,7 @@ export class ProductlistComponent implements OnInit {
     
    }
   fetchProduct(){
-    this.http.get<any>("http://localhost:58792/api/Product").subscribe(
+    this.http.get<any>("http://localhost:53333/api/Product").subscribe(
       response => {
         console.log(response);
         this.productService = response;

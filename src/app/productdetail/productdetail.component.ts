@@ -35,15 +35,15 @@ export class ProductdetailComponent implements OnInit {
   }
 
   fetchProduct(){
-    this.http.get<any>("http://localhost:58792/api/Product/id="+this.productID)
+    this.http.get<any>("http://localhost:53333/api/Product/id="+this.productID)
     .subscribe(response => this.product = response);
   }
   fetchStock(){
-    this.http.get<any>("http://localhost:9839/api/Vendor/stocks/id="+this.productID)
+    this.http.get<any>("http://localhost:53334/api/Vendor/stocks/id="+this.productID)
     .subscribe(response => {this.stock = response; console.log(this.stock)});
   }
   fetchVendor(){
-    this.http.get<any>("http://localhost:9839/api/Vendor/id="+this.productID)
+    this.http.get<any>("http://localhost:53334/api/Vendor/id="+this.productID)
     .subscribe(response => {this.vendor = response; console.log(this.vendor)});
   }
 
