@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthserviceService } from '../services/authservice.service';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +9,29 @@ import { AuthserviceService } from '../services/authservice.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  formGroup!: FormGroup;
-  constructor(){}
+ formGroup!: FormGroup;
+  constructor( private authService : AuthServiceService,private router:Router) { }
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.initForm();
   }
   initForm(){
     this.formGroup=new FormGroup({
-      userId:new FormControl('',[Validators.required]),
-      password:new FormControl('',[Validators.required]),
-      roles:new FormControl('',[Validators.required])
-      
-    });
-  } 
+      username: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
+    })
+  }
   loginProcess(){
-    
-   }
+    this.authService.login(this.formGroup.value).subscribe(
+      (res:any)=>{
+        sessionStorage.setItem('token',res.token);
+        this.router.navigateByUrl('products');
+      },
+      err=>{
+        this.router.navigateByUrl('InvalidCredentials');
+        
+      }
+    );
+  }
+
 }

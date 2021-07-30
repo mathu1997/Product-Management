@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthserviceService {
+export class AuthServiceService {
 
   constructor(private http:HttpClient) { }
-  login(data:any):Observable<any>{
-    return this.http.post('http://localhost:49700/api/Token/auth',data);
+  login(data: any):Observable<any>{
+
+    return this.http.post('http://localhost:37571/api/Auth',data);
   }
 }
