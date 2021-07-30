@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-
+import { WishlistComponent } from './wishlist/wishlist.component';
 const routes: Routes = [
-  
+
 ];
 
 @NgModule({

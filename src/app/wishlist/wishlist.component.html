@@ -1,0 +1,25 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="notavailable">
+                <h1 class="heading">
+                    Oops!</h1>
+                <img src=".\assets\Images\notfound.png" class="img-rounded" alt="Cinque Terre" height="350px">
+                <div class="details">
+                    The product is currently not available.
+                </div><br>
+                <div class="details">
+                    Please try again later.
+                </div>
+                <div class="actions">
+                    <button type="button" class="btn btn-info"  (click)="opensweetalert()"> Add To Wishlist</button>
+                    <input type="submit" value="Later" class="btn btn-info" routerLink="/products"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
