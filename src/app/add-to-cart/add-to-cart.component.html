@@ -4,7 +4,8 @@
         <br>
         <h1>  Add To Cart</h1>
         <br>
-        <form #userForm="ngForm">
+        <form #userForm="ngForm" (ngSubmit)="onSubmitCart(userForm)">
+            {{userForm.value|json}}
             <div class="form-group ">
                 <label class="control-label ">Product Id</label>
                 <input class="form-control" readonly />
@@ -26,13 +27,13 @@
             <br>
             <div class="form-group">
                 <label class="control-label">Delivery Date</label>
-                <input type="date" class="form-control"  style="width: 300px;" name="DeliveryDate" ngModel/>
+                <input type="date" class="form-control" #deliverydate="ngModel" required style="width: 300px;" name="DeliveryDate" ngModel/>
             </div>
             <br>
-            <div class="form-group">
-                <input type="submit" value="Add to Cart" class="btn btn-info" routerLink="/addedsuccessfully"/>
-            </div>
-            
+            <div *ngIf="zipcode.valid && deliverydate.valid; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock><input type="submit" value="Add to Cart" class="btn btn-info"/></ng-template>
+                <ng-template #elseBlock><button class="btn btn-info" onclick="getElementById('demo').innerHTML='ZipCode & Delivery Date are Required'">Add To Cart</button> <br> 
+                    <br><p id="demo" class="text-danger"></p></ng-template>
         </form>
         </div>
         <div class="col-8">
