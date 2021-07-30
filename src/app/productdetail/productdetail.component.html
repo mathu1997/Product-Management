@@ -16,13 +16,24 @@
         <div  class="d-flex justify-content-center">
             <img class="card-img-top" [src]="product.imageName" style="height: 400px;" class="img-fluid rounded mx-auto d-block"   alt="Card image cap">
         </div>
-        <div class="d-inline">
-            <button (click)="onCreateCart()" routerLink="/add/cart/{{product.id}}" class="btn btn-primary w-100" style="padding: 10px; margin: 10px 0; font-size: larger;" >
-                <span style="margin-right: 10px;">
-                    <i class="fa fa-shopping-cart">&nbsp;</i>
-                </span>
-                Add&nbsp;Cart
-            </button>
+        <div class="row">
+            <div class="col-lg-6">
+                <button [disabled]="stock.stockInHand<=0" (click)="onCreateCart()" routerLink="/add/cart/{{product.id}}" class="btn btn-primary w-100" style="padding: 10px; margin: 10px 0; font-size: larger;" >
+                    <span style="margin-right: 10px;">
+                        <i class="fa fa-shopping-cart">&nbsp;</i>
+                    </span>
+                    Add&nbsp;Cart
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <button (click)="onCreateCart()" routerLink="/addtowishlist/{{product.id}}" class="btn btn-warning w-100" style="padding: 10px; margin: 10px 0; font-size: larger;" >
+                    <span style="margin-right: 10px;">
+                        <i class="fa fa-shopping-cart">&nbsp;</i>
+                    </span>
+                    Add&nbsp;WishList
+                </button>
+            </div>
+            
         </div>
         <!-- <div class="">
             <a href="#" class="btn btn-success" 

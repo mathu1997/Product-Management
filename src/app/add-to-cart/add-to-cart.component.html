@@ -5,15 +5,14 @@
         <h1>  Add To Cart</h1>
         <br>
         <form #userForm="ngForm" (ngSubmit)="onSubmitCart(userForm)">
-            {{userForm.value|json}}
             <div class="form-group ">
-                <label class="control-label ">Product Id</label>
-                <input class="form-control" readonly />
+                <label class="control-label ">Product Name</label>
+                <input class="form-control" readonly [value]="product.name" />
             </div>
             <br>
             <div class="form-group">
-                <label class="control-label">Customer Id</label>
-                <input class="form-control" readonly  />
+                <label class="control-label">Customer Name</label>
+                <input class="form-control" readonly  [value]="userName"/>
             </div>
             <br>
             <div class="form-group">

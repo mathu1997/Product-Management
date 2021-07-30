@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,6 +25,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { AuthServiceService } from './auth-service.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const appRoutes: Routes = [
   { path:'', component:HomeComponent},
@@ -36,9 +37,10 @@ const appRoutes: Routes = [
   {path:'login',component:LoginComponent},
  // {path:'product',component:ProductComponent,canActivate:[AuthGuardService]},
   {path:'InvalidCredentials',component:InvalidCredentialsComponent},
-  {path:'addedsuccessfully',component:AddedSuccessfullyComponent},
+  {path:'addedsuccessfully/:cartid/:productid',component:AddedSuccessfullyComponent},
   {path:'addrating',component:AddRatingComponent},
-  {path:'ratingadded',component:RatingAddedSuccessfullyComponent}
+  {path:'ratingadded',component:RatingAddedSuccessfullyComponent},
+  {path:'addtowishlist/:id',component:WishlistComponent},
 
 ];
 
@@ -59,6 +61,7 @@ export function tokenGetter(){
     AddRatingComponent,
     RatingAddedSuccessfullyComponent,
     InvalidCredentialsComponent,
+    WishlistComponent,
     
   ],
   imports: [
