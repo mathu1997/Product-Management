@@ -25,6 +25,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { AuthServiceService } from './auth-service.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const appRoutes: Routes = [
   { path:'', component:HomeComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
   {path:'InvalidCredentials',component:InvalidCredentialsComponent},
   {path:'addedsuccessfully',component:AddedSuccessfullyComponent},
   {path:'addrating',component:AddRatingComponent},
-  {path:'ratingadded',component:RatingAddedSuccessfullyComponent}
+  {path:'ratingadded',component:RatingAddedSuccessfullyComponent},
+  {path:'addtowishlist',component:WishlistComponent}
 
 ];
 
@@ -59,6 +61,7 @@ export function tokenGetter(){
     AddRatingComponent,
     RatingAddedSuccessfullyComponent,
     InvalidCredentialsComponent,
+    WishlistComponent,
     
   ],
   imports: [

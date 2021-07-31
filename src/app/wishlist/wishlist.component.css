@@ -1,0 +1,20 @@
+
+.notavailable
+{
+    margin-top: 50px;
+    padding: 40px 15px;
+    text-align: center;}
+.actions {
+   margin-top:15px;
+   margin-bottom:15px;}
+.actions .btn { 
+   margin-right:10px; }
+.heading{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-size: 50px;
+   font-style: oblique;
+}
+.details{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-size: 20px;
+}
