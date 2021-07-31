@@ -49,7 +49,8 @@ export class ProductlistComponent implements OnInit {
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
   }
-  onSearchChange(Search: string){
+  onSearchChange(SearchEvent: Event){
+    let Search = this.getValue(SearchEvent);
     this.pservice = [];
     if (Search==""){
       this.pservice = this.productService;
@@ -68,7 +69,8 @@ export class ProductlistComponent implements OnInit {
     }
   }
 
-  onSearchId(Search: number){
+  onSearchId(SearchEvent: Event){
+    let Search = this.getValue(SearchEvent);
     this.pservice = [];
     if (!Search){
       this.pservice = this.productService;
